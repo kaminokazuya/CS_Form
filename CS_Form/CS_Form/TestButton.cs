@@ -13,12 +13,12 @@ namespace CS_Form
         /// コンストラクタ
         /// クラスを生成したときに呼びだされる
         /// </summary>
-        public TestButton(int x, int y, int width, int height)
+        public TestButton(int id,int x, int y, int width, int height)
         {
             //ClickイベントにOnClick関数を登録
             Click += OnClick;
             //ボタン内に文字を表示させる
-            Text = "ボタン";
+            Text = id.ToString();
             //ボタンの生成位置を指定
             Location = new Point(x,y);
             //ボタンの大きさを指定
@@ -28,7 +28,7 @@ namespace CS_Form
 
         public void OnClick(object sender, EventArgs s)
         {
-            MessageBox.Show("しじみ");
+            MessageBox.Show(Text);
         }
     }
 }
