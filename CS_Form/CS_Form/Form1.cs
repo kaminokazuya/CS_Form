@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,10 +18,26 @@ namespace CS_Form
         public Form1()
         {
             InitializeComponent();
+
+            string[] strs =
+            {
+                "あ",
+                "い",
+                "う",
+                "え",
+                "お",
+                "か",
+                "き",
+                "く",
+                "け",
+                "こ",
+
+            };
+           
             
             for (int i = 0; i < 10; i++)
             {
-                TestButton testButton = new TestButton(this, i,(i%5)*100, (i/5)*100, 100, 100);
+                TestButton testButton = new TestButton(this, strs[i],(i%5)*100, (i/5)*100, 100, 100);
                 Controls.Add(testButton);
             }
 

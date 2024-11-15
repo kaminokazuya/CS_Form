@@ -10,20 +10,19 @@ namespace CS_Form
 {
     internal class TestButton :Button
     {
+        
         Form1 _form1;
-
         /// <summary>
         /// コンストラクタ
         /// クラスを生成したときに呼びだされる
         /// </summary>
-        public TestButton(Form1 form1, int id,int x, int y, int width, int height)
+        public TestButton(Form1 form1, string str,int x, int y, int width, int height)
         {
-            _form1 = form1;  
-
+            _form1 = form1;
             //ClickイベントにOnClick関数を登録
             Click += OnClick;
             //ボタン内に文字を表示させる
-            Text = id.ToString();
+            Text =(str);
             //ボタンの生成位置を指定
             Location = new Point(x,y);
             //ボタンの大きさを指定
@@ -35,5 +34,6 @@ namespace CS_Form
         {
             _form1.LabelTextUpdate(Text);
         }
+
     }
 }
