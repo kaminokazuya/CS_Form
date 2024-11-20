@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -22,9 +23,13 @@ namespace CS_Form
 
         }
 
-        public void TextUpdate(string str)
+        public string TextReplacement(string str)
         {
+            string temp = Text;
+
             Text = str;
+
+            return temp;
         }
     }
 }

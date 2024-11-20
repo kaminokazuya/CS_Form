@@ -12,15 +12,15 @@ namespace CS_Form
     {
         
         Form1 _form1;
-        TestTextBox _textBox;
+
         /// <summary>
         /// コンストラクタ
         /// クラスを生成したときに呼びだされる
         /// </summary>
-        public TestButton(Form1 form1,TestTextBox testTextBox, string str,int x, int y, int width, int height)
+        public TestButton(Form1 form1, string str,int x, int y, int width, int height)
         {
             _form1 = form1;
-            _textBox = testTextBox;
+
             //ClickイベントにOnClick関数を登録
             Click += OnClick;
             //ボタン内に文字を表示させる
@@ -33,17 +33,13 @@ namespace CS_Form
 
         public void OnClick(object sender, EventArgs s)
         {
+            string t = _form1.ButtonLabelReplacement(Text);
+
+            Text = t;
+
             _form1.LabelTextUpdate(Text);
-
-            _form1.TestButtonUpdate(Text);
-
-            _form1.TestTextUpdate(Text);
         }
 
-        public void TextUpdate(string str)
-        {
-            Text = str;
-        }
-
+       
     }
 }

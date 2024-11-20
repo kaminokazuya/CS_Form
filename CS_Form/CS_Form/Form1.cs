@@ -40,15 +40,15 @@ namespace CS_Form
             
             for (int i = 0; i < 10; i++)
             {
-                _testButton = new TestButton(this,_textBox, strs[i],(i%5)*100, (i/5)*100, 100, 100);
+                _testButton = new TestButton(this, strs[i],(i%5)*100, (i/5)*100, 100, 100);
                 Controls.Add(_testButton);
             }
 
-            _testLabel = new TestLabel("らべるです。",10,300,100,500);
+            _testLabel = new TestLabel("らべるです。",10,300,100,50);
 
             Controls.Add(_testLabel);
             //テキストボックスの作成
-            _textBox = new TestTextBox("テキストボックスです", 10, 300, 500, 100);
+            _textBox = new TestTextBox("テキストボックスです", 10, 350, 500, 50);
 
             Controls.Add(_textBox);
             /*
@@ -68,15 +68,16 @@ namespace CS_Form
             _testLabel.TextUpdate(str);
         }
 
-        public void TestButtonUpdate(string str)
+        public string ButtonLabelReplacement(string str)
         {
-            _testButton.TextUpdate(str);
+          string s = _textBox.TextReplacement(str);
+
+            return s;
         }
 
-        public void TestTextUpdate(string str)
-        {
-            _textBox.TextUpdate(str);
-        }
+       
+
+
 
      
     }
